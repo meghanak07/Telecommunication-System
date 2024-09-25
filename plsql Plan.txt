@@ -1,0 +1,94 @@
+PLAN:
+SQL> create table plan(planid number primary key,sid number references service(s
+id),name varchar(30),price number, description varchar(40));
+Table created.
+SQL> desc plan;
+Name Null? Type
+----------------------------------------- -------- ----------------------------
+PLANID NOT NULL NUMBER
+SID NUMBER
+NAME VARCHAR2(30)
+PRICE NUMBER
+DESCRIPTION VARCHAR2(40)
+SQL> insert into plan values(&planid,&sid,'&name',&price,'&description');
+Enter value for planid: 121
+Enter value for sid: 411
+Enter value for name: idea
+Enter value for price: 399
+Enter value for description: unlimited calls for 30 days
+old 1: insert into plan values(&planid,&sid,'&name',&price,'&description')
+new 1: insert into plan values(121,411,'idea',399,'unlimited calls for 30 days')
+1 row created.
+SQL> select * from plan;
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+ 121 411 idea 399
+unlimited calls for 30 days
+15
+ 122 411 idea 499
+unlimited data for 30 days
+ 123 411 idea 359
+6gb data for 84days
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+ 124 411 idea 299
+30 gb 30 days
+ 131 412 jio 189
+unlimited calls for 30 days
+ 132 412 jio 289
+unlimited data for 30 days
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+ 133 412 jio 119
+6gb data 84days
+ 134 412 jio 239
+30gb data 30days
+ 141 413 airtel 399
+unlimited call for 30 days
+16
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+ 142 413 airtel 599
+unlimited data for 30 days
+ 143 413 airtel 399
+6gb data for 84 data
+ 144 413 airtel 599
+30gb data 30days
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+ 151 414 bsnl 299
+unlimited calls for 30 days
+ 152 414 bsnl 399
+unlimited data for 30 days
+ 153 414 bsnl 199
+6gb for 84 days
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+17
+ 154 414 bsnl 499
+30gb for 30days
+ 161 415 vodafone 299
+unlimited calls for 30days
+ 162 415 vodafone 399
+unlimited data for 30 days
+ PLANID SID NAME PRICE
+---------- ---------- ------------------------------ ----------
+DESCRIPTION
+----------------------------------------
+ 163 415 vodafone 199
+6gb for 84days
+ 164 415 vodafone 399
+30gb for 30days
+20 rows selected

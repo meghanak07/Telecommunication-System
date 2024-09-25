@@ -1,0 +1,27 @@
+ACCOUNT:
+SQL> create table account(aid number primary key,cid number references customer(
+cid), accountnumber number,billingaddress varchar(30));
+Table created.
+SQL> desc account;
+Name Null? Type
+----------------------------------------- -------- ----------------------------
+AID NOT NULL NUMBER
+CID NUMBER
+ACCOUNTNUMBER NUMBER
+BILLINGADDRESS VARCHAR2(30)
+SQL> insert into account values(&aid,&cid,&accountnumber,'&billingaddress');
+Enter value for aid: 2003
+Enter value for cid: 105
+Enter value for accountnumber: 9876543
+Enter value for billingaddress: rajampeta
+old 1: insert into account values(&aid,&cid,&accountnumber,'&billingaddress')
+new 1: insert into account values(2003,105,9876543,'rajampeta')
+1 row created.
+SQL> select * from account;
+ AID CID ACCOUNTNUMBER BILLINGADDRESS
+---------- ---------- ------------- ------------------------------
+ 2003 105 9876543 rajampeta
+ 2004 104 8947833 hindupur
+ 2005 103 3243435 kurnool
+ 2006 102 567455 kadapa
+ 2007 101 56456756 rajampeta

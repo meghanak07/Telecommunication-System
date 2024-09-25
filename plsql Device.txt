@@ -1,0 +1,30 @@
+Device:
+SQL> create table device(deviceid number primary key,cid number references customer(cid),name 
+varchar(20),modelnumber varchar(10),serialnumber number);
+Table created.
+SQL> desc device;
+Name Null? Type
+----------------------------------------- -------- ----------------------------
+DEVICEID NOT NULL NUMBER
+CID NUMBER
+NAME VARCHAR2(20)
+MODELNUMBER VARCHAR2(10)
+SERIALNUMBER NUMBER
+SQL> insert into device values(&deviceid,&cid,'&name','&modelnumber',&serialnumber);
+Enter value for deviceid: 601
+18
+Enter value for cid: 101
+Enter value for name: samsung
+Enter value for modelnumber: f64
+Enter value for serialnumber: 3456
+old 1: insert into device values(&deviceid,&cid,'&name','&modelnumber',&serialnumber)
+new 1: insert into device values(601,101,'samsung','f64',3456)
+1 row created.
+SQL> select * from device;
+ DEVICEID CID NAME MODELNUMBE SERIALNUMBER
+---------- ---------- -------------------- ---------- ------------
+ 601 101 samsung f64 3456
+ 602 102 realme narz0 n55 3457
+ 603 103 iphone 13 pro 3458
+ 604 104 oppo a57 3459
+ 605 105 vivo v27 3460

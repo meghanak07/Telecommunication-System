@@ -1,0 +1,25 @@
+SERVICE:
+SQL> create table service(sid number primary key,name varchar(20),price number);
+Table created.
+SQL> desc service;
+Name Null? Type
+----------------------------------------- -------- ----------------------------
+SID NOT NULL NUMBER
+NAME VARCHAR2(20)
+PRICE NUMBER
+SQL> insert into service values(&sid,'&name',&price);
+Enter value for sid: 411
+Enter value for name: idea
+Enter value for price: 300
+old 1: insert into service values(&sid,'&name',&price)
+new 1: insert into service values(411,'idea',300)
+14
+1 row created.
+SQL> select * from service;
+ SID NAME PRICE
+---------- -------------------- ----------
+ 411 idea 300
+ 412 jio 220
+ 413 airtel 455
+ 414 bsnl 199
+ 415 vodafone 299

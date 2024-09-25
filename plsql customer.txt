@@ -1,0 +1,38 @@
+CUSTOMER:
+SQL> create table customer(cid number primary key , name varchar(30),address var
+char(30),phonenumber number);
+Table created.
+SQL> desc customer;
+Name Null? Type
+----------------------------------------- -------- ----------------------------
+CID NOT NULL NUMBER
+NAME VARCHAR2(30)
+ADDRESS VARCHAR2(30)
+PHONENUMBER NUMBER
+SQL> insert into customer values(&cid,'&name','&address',&phonenumber);
+Enter value for cid: 101
+Enter value for name: sushmitha
+Enter value for address: rajampeta
+Enter value for phonenumber: 7093458739
+old 1: insert into customer values(&cid,'&name','&address',&phonenumber)
+new 1: insert into customer values(101,'sushmitha','rajampeta',7093458739)
+1 row created.
+SQL> select * from customer;
+ CID NAME ADDRESS
+---------- ------------------------------ ------------------------------
+PHONENUMBER
+-----------
+ 101 sushmitha rajampeta
+7093458739
+ 102 kavya kadapa
+ 453423222
+ 103 vinay kurnool
+3456777778
+ CID NAME ADDRESS
+---------- ------------------------------ ------------------------------
+PHONENUMBER
+-----------
+ 104 nandish hindupur
+3443523556
+ 105 prasanna rajampeta
+ 873946640
